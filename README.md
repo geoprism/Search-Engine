@@ -7,13 +7,13 @@ implement a search engine with Whoosh and build an interface. Enjoy!
 
 ##References
 Most of the algorithms and methodologies are easily found online. A simple google search should do... ;)
-Most of the course follows the teaching of Professor Christopher Mannings: http://nlp.stanford.edu/manning/
-He teaches CS276 at Stanford and a majority of his lectures are available online.
-I found these resources most helpful when building my engine:
-http://web.stanford.edu/class/cs276/
-Cosine scoring: https://www.youtube.com/watch?v=E3shpvJUZ84&t=423s
 
-Compared my ranked results with Apache Lucene: http://lucene.apache.org/core/
+Most of the course follows the teaching of Professor Christopher Mannings: http://nlp.stanford.edu/manning/   
+He teaches CS276 at Stanford and a majority of his lectures are available online.   
+
+I found these resources most helpful when building my engine: http://web.stanford.edu/class/cs276/  
+Cosine scoring: https://www.youtube.com/watch?v=E3shpvJUZ84&t=423s   
+Compared my ranked results with Apache Lucene: http://lucene.apache.org/core/   
 
 This project should be doable for some one who understands python and basic computing
 
