@@ -2,7 +2,7 @@
 Built from scratch with python and good intentions. oh, and scored on tf-idf...
 
 Overall one of my more satisfying projects. I have always been curious how search engine
-are implementing, I use one everyday, so they are kind of a big deal :). Plans to
+are implemented, I use one everyday, so they are kind of a big deal :). Plans to
 implement a search engine with Whoosh and build an interface. Enjoy!
 
 ##References
@@ -13,7 +13,7 @@ He teaches CS276 at Stanford and a majority of his lectures are available online
 
 I found these resources most helpful when building my engine: http://web.stanford.edu/class/cs276/  
 Cosine scoring: https://www.youtube.com/watch?v=E3shpvJUZ84&t=423s   
-Compared my ranked results with Apache Lucene: http://lucene.apache.org/core/   
+Compared my ranked results with Apache Lucene(Java): http://lucene.apache.org/core/   
 
 This project should be doable for some one who understands python and basic computing
 
@@ -22,7 +22,7 @@ This project should be doable for some one who understands python and basic comp
 
 ##My Thoughts
 
-**Test data:** static html pages that I crawled through uci.ics.edu domain
+**Test data:** static html pages that I crawled through at uci.ics.edu domain
 
 **Stemming/stopwards:** For stemming I used NLTK’s porter stemmer. For stopwords I used NLTK.corpus stopwords and added a few of my own. For example, “strong” would accidently be passed through as a token, which was really the html tag “strong”.
 
