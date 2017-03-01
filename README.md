@@ -24,7 +24,7 @@ This project should be doable for some one who understands python and basic comp
 
 **Test data:** static html pages that I crawled through uci.ics.edu domain
 
-**Stemming/stopwards:** For stemming I used NLTK’s porter stemmer. For stopwords I used NLTK.corpus stopwords and added a few of my own. For example, “strong” would accidently be passed through as a token, which was really the html tag “</strong>”.
+**Stemming/stopwards:** For stemming I used NLTK’s porter stemmer. For stopwords I used NLTK.corpus stopwords and added a few of my own. For example, “strong” would accidently be passed through as a token, which was really the html tag <pre>“<strong>”</pre>.
 
 **Tokenizer:** For tokenizing I used NLTK’s word_tokenizer, I made sure every word was lowercase and matched the regular expression: "^[a-z].+[a-z]$". In laymen terms, this made sure that every token started and ended with a lowercase character and was at least length  3. This prevented strings such as “h3” or <b>, also prevented words with length 2 from entering the index(even though the stopwords would handle this). My tokenizer has very strict rules, plans to allow all alphanumeric characters in the next iteration.
 
