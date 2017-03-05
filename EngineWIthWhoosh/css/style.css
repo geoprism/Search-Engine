@@ -1,0 +1,22 @@
+.main-title{
+  text-align:center;
+  margin-top:15%;
+  font-size:60px;
+}
+
+.search-container{
+  width:50%;
+  position:center;
+  margin:0 auto;
+  margin-top:150px;
+  text-align: center;
+
+}
+
+
+input{
+    text-align: center;
+    font-size:24px;    
+    width: 75%;
+    height: 30px;
+}

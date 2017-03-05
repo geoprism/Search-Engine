@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Search Engine</title>
+
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" href="img/uci_icon.jpg">
+
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script language="JavaScript" type="text/javascript" src="js/some.js"></script>
+
+
+    </head>
+    <body>
+
+        <div class="search-container form-group">
+          <h1 class="main-title">Google</h1>
+          <form class="searchForm">
+            <input type="text" name="searchbar" autocomplete="off" class="searchBar form-control" id="searchInput">
+          </form>
+
+          {% for item in items %}
+              <p>{{ item }}</p>
+          {% end %}
+
+
+        </div>
+    </body>
+</html>
