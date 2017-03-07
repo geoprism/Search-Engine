@@ -5,7 +5,7 @@ Built from scratch with python and good intentions...scored with bm25 tf-idf...
 ## Iterations/Implementations 
 1.) Built with Lucene API in Java (too magical, Lucene handled mostly everything)  
 2.) Built from scratch, using NLTK Tokenizer, stopwords, stemmers, etc. (Limited on size of data set searchability, felt I could do better.)    
-3.) Built with Whoosh Python API (satisfied with decision, mixture of Lucene magic and building for scratch. Also clean code)
+3.) Built with Whoosh API (satisfied with the decision, no magic, easily understandable. Also allows for clean, readable code)
 
 
 Current stage: Working on building front end interface, similar to google.
