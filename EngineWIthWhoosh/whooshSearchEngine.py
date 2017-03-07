@@ -32,30 +32,39 @@ class whooshIndexer:
             results = searcher.search(q, limit=20)
             for i in range(results.scored_length()):
                 print(results[i]['path'])
-                total.append(results[i]['path'])
-            #     with open("WEBPAGES_RAW/" +  results[i]["path"]) as fileobj:
-            #         filecontents = fileobj.read()
-            #         soup = BeautifulSoup(filecontents, 'lxml')
-            #         body = soup.text
-            #     print(results[i].highlights("content", text= body ))
+                temp = dict()
+
+                #total.append(results[i]['path'])
+                temp["url"] = results[i]['url']
+                with open("WEBPAGES_RAW/" +  results[i]["path"]) as fileobj:
+                    filecontents = fileobj.read()
+                    soup = BeautifulSoup(filecontents, 'lxml')
+                    body = soup.text
+                #print(results[i].highlights("content", text= body ))
+
+                temp["description"] = results[i].highlights("content", text= body )
+                temp["title"] = results[i]["title"]
+                total.append(temp)
+
+        print(total)
         return total
 
     def createIndex(self):
         """ creates the index """
         writer = self.ix.writer()
-        files = self.fileSearch(Path('WEBPAGES_RAW'))
-        json_book = json.load(open("WEBPAGES_RAW/bookkeeping.json"))
+        files = self.fileSearch(Path('WEBPAGES_SIMPLE'))
+        json_book = json.load(open("WEBPAGES_SIMPLE/bookkeeping.json"))
         for filename in files:
-            print("Indexing: ", str(filename)[13:])
-            print(json_book[str(filename)[13:]])
-            writer.add_document(path = str(filename)[13:], content = self.grabsContent(str(filename)), title = self.grabTitle(str(filename)), url = json_book[str(filename)[13:]])
+            #print("Indexing: ", str(filename)[16:])
+            #print(json_book[str(filename)[16:]])
+            writer.add_document(path = str(filename)[16:], content = self.grabsContent(str(filename)), title = self.grabTitle(str(filename)), url = json_book[str(filename)[16:]])
         writer.commit()
 
 
     def grabTitle(self, path: str):
         """ grabs title from html"""
         title = path
-        f = open(path,'r')
+        f = open(path,'r', encoding="latin-1")
         soup = BeautifulSoup(f, 'lxml')
         temp = soup.find('title')
         if temp != None:
@@ -66,7 +75,7 @@ class whooshIndexer:
         """Grabs the content from one document, weights h1,h2,h3,title, strong tags appropriately
            Returns a string
         """
-        f = open(path,'r')
+        f = open(path,'r', encoding="latin-1")
         soup = BeautifulSoup(f, 'lxml')
         body = soup.text
 
@@ -103,7 +112,7 @@ class whooshIndexer:
 
 if __name__ == '__main__':
     test = whooshIndexer()
-    test.createIndex()
+    #test.createIndex()
     q = ""
     while q.lower() != "quit":
         q = input("Query: ")
