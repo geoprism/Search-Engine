@@ -1,31 +1,33 @@
 <!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>A Pen by  Jason Cha</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Search Engine</title>
+      <link rel="stylesheet" href="css/style.css">
 
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="icon" href="img/uci_icon.jpg">
+  
+</head>
 
-        <script src="js/jquery-3.1.1.min.js"></script>
-        <script language="JavaScript" type="text/javascript" src="js/some.js"></script>
+<body>
+  
+<h1 class="main-title">Google</h1>
 
+<div class="search-container form-group">
+  <form class="searchForm">
+    <input type="text" name="searchbar" autocomplete="off" class="searchBar form-control" id="searchInput">
+  </form>
+</div>
 
-    </head>
-    <body>
+<div class="results-container container-fluid">
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
 
-        <div class="search-container form-group">
-          <h1 class="main-title">Google</h1>
-          <form class="searchForm">
-            <input type="text" name="searchbar" autocomplete="off" class="searchBar form-control" id="searchInput">
-          </form>
+    <script src="js/index.js"></script>
 
-          {% for item in items %}
-              <p>{{ item }}</p>
-          {% end %}
-
-
-        </div>
-    </body>
+</body>
 </html>

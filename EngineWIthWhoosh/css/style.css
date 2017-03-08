@@ -8,15 +8,22 @@
   width:50%;
   position:center;
   margin:0 auto;
-  margin-top:150px;
-  text-align: center;
+  margin-top:70px;
+}
 
+.results-container{
+  margin-left:25%;
+  background-color:#F6F6F6;
+  margin-right:25%;
+  word-wrap: break-word;
+}
+
+.link{
+  color:green;
+}
+
+.title{
+  font-size:20px;
 }
 
 
-input{
-    text-align: center;
-    font-size:24px;    
-    width: 75%;
-    height: 30px;
-}
