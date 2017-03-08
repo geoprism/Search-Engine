@@ -52,12 +52,12 @@ class whooshIndexer:
     def createIndex(self):
         """ creates the index """
         writer = self.ix.writer()
-        files = self.fileSearch(Path('WEBPAGES_SIMPLE'))
-        json_book = json.load(open("WEBPAGES_SIMPLE/bookkeeping.json"))
+        files = self.fileSearch(Path('WEBPAGES_RAW'))
+        json_book = json.load(open("WEBPAGES_RAW/bookkeeping.json"))
         for filename in files:
             #print("Indexing: ", str(filename)[16:])
             #print(json_book[str(filename)[16:]])
-            writer.add_document(path = str(filename)[16:], content = self.grabsContent(str(filename)), title = self.grabTitle(str(filename)), url = json_book[str(filename)[16:]])
+            writer.add_document(path = str(filename)[13:], content = self.grabsContent(str(filename)), title = self.grabTitle(str(filename)), url = json_book[str(filename)[13:]])
         writer.commit()
 
 
