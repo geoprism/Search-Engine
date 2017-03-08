@@ -16,7 +16,7 @@ function fillResults(data){
     let url = data.content[i].url;
     if(url.length > 70)
       url = url.substring(0,70) + "...";
-    result += "<a href=" + data.content[i].url + "><span class='title'>" + data.content[i].title + "</span></a>\n";
+    result += "<a href=https://" + data.content[i].url + "><span class='title'>" + data.content[i].title + "</span></a>\n";
     result += "<p><span class='link'>" + url + "</span><br>";
     result += data.content[i].description + "</p>";
   }
