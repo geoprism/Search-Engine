@@ -4,8 +4,16 @@ $(document).ready(() => {
     let text = e.target.searchbar.value;
       $(".results-container").empty();
       animate();
-      $.get("https://search-engine-tornado.herokuapp.com/search/api/"+text, function(data){
-        fillResults(data);
+
+      $.ajax({
+        type:"GET",
+        url:"http://localhost:5000/search/api/" + text,
+        success:function(data){
+          fillResults(data);
+        },
+        error:function(data){
+          alert(data);
+        }
       });
   });
 });
