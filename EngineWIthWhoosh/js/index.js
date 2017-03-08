@@ -22,9 +22,12 @@ function fillResults(data){
   let result = "";
   for(let i=0; i<data.content.length; i++){
     let url = data.content[i].url;
+    let title = data.content[i].title;
     if(url.length > 70)
       url = url.substring(0,70) + "...";
-    result += "<a href=https://" + data.content[i].url + "><span class='title'>" + data.content[i].title + "</span></a>\n";
+    if(title.length > 60)
+      title = title.substring(0,60) + "...";
+    result += "<a href=https://" + data.content[i].url + "><span class='title'>" + title + "</span></a>\n";
     result += "<p><span class='link'>" + url + "</span><br>";
     result += data.content[i].description + "</p>";
   }

@@ -46,7 +46,7 @@ class whooshIndexer:
                 temp["title"] = results[i]["title"]
                 total.append(temp)
 
-        print(total)
+        #print(total)
         return total
 
     def createIndex(self):
@@ -67,7 +67,7 @@ class whooshIndexer:
         f = open(path,'r', encoding="latin-1")
         soup = BeautifulSoup(f, 'lxml')
         temp = soup.find('title')
-        if temp != None:
+        if temp != None and temp.text != "":
             title = temp.text
         return title
 
