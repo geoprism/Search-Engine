@@ -55,7 +55,7 @@ class whooshIndexer:
         files = self.fileSearch(Path('WEBPAGES_RAW'))
         json_book = json.load(open("WEBPAGES_RAW/bookkeeping.json"))
         for filename in files:
-            #print("Indexing: ", str(filename)[16:])
+            print("Indexing: ", str(filename)[13:])
             #print(json_book[str(filename)[16:]])
             writer.add_document(path = str(filename)[13:], content = self.grabsContent(str(filename)), title = self.grabTitle(str(filename)), url = json_book[str(filename)[13:]])
         writer.commit()
@@ -79,23 +79,23 @@ class whooshIndexer:
         soup = BeautifulSoup(f, 'lxml')
         body = soup.text
 
-        # h1 = " "
-        # h2 = " "
-        # h3 = " "
-        # strong = " "
-        # title = " "
-        # for words in soup.find_all('h1'):
-        #     h1 += ' '.join([words.text, " "])
-        # for words in soup.find_all('h2'):
-        #     h2 += ' '.join([words.text, " "])
-        # for words in soup.find_all('h3'):
-        #     h3 += ' '.join([words.text, " "])
-        # for words in soup.find_all('strong'):
-        #     strong += ' '.join([words.text, " "])
-        # for words in soup.find_all('title'):
-        #     title += ' '.join([words.text, " "])
-        #
-        # body += (h1*3) + (h2*2) + (title*2) + h3 + strong #assigns weights to specific tags
+        h1 = " "
+        h2 = " "
+        h3 = " "
+        strong = " "
+        title = " "
+        for words in soup.find_all('h1'):
+            h1 += ' '.join([words.text, " "])
+        for words in soup.find_all('h2'):
+            h2 += ' '.join([words.text, " "])
+        for words in soup.find_all('h3'):
+            h3 += ' '.join([words.text, " "])
+        for words in soup.find_all('strong'):
+            strong += ' '.join([words.text, " "])
+        for words in soup.find_all('title'):
+            title += ' '.join([words.text, " "])
+
+        body += (h1*3) + (h2*2) + (title*2) + h3 + strong #assigns weights to specific tags
         return body
 
     def fileSearch(self, path: Path):
@@ -112,12 +112,12 @@ class whooshIndexer:
 
 if __name__ == '__main__':
     test = whooshIndexer()
-    #test.createIndex()
-    q = ""
-    while q.lower() != "quit":
-        q = input("Query: ")
-        if q.lower() != "quit":
-            test.makeSearch(q)
+    test.createIndex()
+    # q = ""
+    # while q.lower() != "quit":
+    #     q = input("Query: ")
+    #     if q.lower() != "quit":
+    #         test.makeSearch(q)
 
 
 
