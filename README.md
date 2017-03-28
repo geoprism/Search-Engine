@@ -2,21 +2,13 @@
 Built from scratch with python and good intentions...scored with bm25 tf-idf...
 
 
-##Iterations/Implementations
+## Iterations/Implementations   
 1.) Built with Lucene API in Java (too magical, Lucene handled mostly everything)  
 2.) Built from scratch, using NLTK Tokenizer, stopwords, stemmers, etc. (Limited on size of data set searchability, felt I could do better.)    
 3.) Built with Whoosh API (satisfied with the decision, no magic, easily understandable. Also allows for clean, readable code)
 
 
-Current stage: Working on building front end interface, similar to google.
-
-
-
-Overall one of my more satisfying projects. I have always been curious how search engine
-are implemented, I use one everyday, so they are kind of a big deal :). Plans to
-implement a search engine with Whoosh and build an interface. Enjoy!
-
-##References
+## References    
 Most of the algorithms and methodologies are easily found online. A simple google search should do... ;)
 
 Most of the course follows the teaching of Professor Christopher Mannings: http://nlp.stanford.edu/manning/   
@@ -31,7 +23,7 @@ This project should be doable for some one who understands python and basic comp
 
 
 
-##My Thoughts
+## My Thoughts
 
 **Test data:** static html pages that I crawled through at uci.ics.edu domain
 
